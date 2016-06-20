@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 '''
-geocode.py - batch geocode a csv file
+geocode-csv.py - batch geocode a csv file
 '''
 
 google_key = ""
@@ -13,7 +13,7 @@ if len(sys.argv) == 4:
     out_file = sys.argv[2]
     location_fields_str = sys.argv[3]
 else:
-    print("Usage: python geocode.py in.csv out.csv addr,city,state")
+    print("Usage: python geocode-csv.py in.csv out.csv addr,city,state")
     sys.exit()
 
 location_fields = location_fields_str.split(',')
