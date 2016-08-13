@@ -1,12 +1,18 @@
 #!/usr/bin/env python
+
 '''
 geocode-csv.py - batch geocode a csv file
 '''
 
-google_key = ""
+import csv, sys, geocoder, os
+
+if 'GOOG_PLACE_KEY' in os.environ:
+    google_key = os.environ['GOOG_PLACE_KEY']
+else:
+    sys.exit("Set Google API key in $GOOG_PLACE_KEY")
+
 csv_delimiter = ","
 
-import csv, sys, geocoder
 
 if len(sys.argv) == 4:
     in_file = sys.argv[1]
